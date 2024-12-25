@@ -1,0 +1,27 @@
+server:
+  port: 8282
+
+spring:
+  application:
+    name: TarotCardService
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tarot
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: create
+        order_inserts: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+          batch_size: 20
+        generate_statistics: false
+    show-sql: true
+    database: postgresql
+
